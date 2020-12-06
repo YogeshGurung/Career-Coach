@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Career Coach</title>
+        <link rel="stylesheet" href="./assets/css/index.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet" />
+        <script></script>
+    </head>
+    <body>
+        <header>
+            <div class="left">
+                <div class="toggle-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="logo">
+                    <img src="./assets/images/logo/logo.png" alt="Career Coach logo" />
+                </div>
+            </div>
+
+            <div class="right">
+                <nav>
+                    <ul>
+                        <li id="openSettingButton">Setting</li>
+                        <li>Welcome, Niky</li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section>
+            <div class="body-header">
+                <h1 class="page-title">Welcome <br />to <br />Career Coach</h1>
+            </div>
+            <div class="body-content"></div>
+        </section>
+        <div id="popup">
+            <div class="popup-container">
+                <div class="popup">
+                    <div class="close-popup" id="closeBtn"><a href="#">X</a></div>
+                    <nav class="settings">
+                        <ul>
+                            <li><a href="">My Statistics</a></li>
+                            <li id="lhm" class="hidemode active" title="Enable Left hand mode" onclick="toogleLHM('rhm')">
+                                <a href="javascript:;"> Enable Left hand mode </a>
+                            </li>
+                            <li id="rhm" class="hidemode" title="Disable Left hand mode" onclick="toogleLHM('lhm')">
+                                <a href="javascript:;"> Disable Left hand mode </a>
+                            </li>
+                            <li id="unmute" class="hidemode active" title="Sound on" onclick="toggleSound('mute')">
+                                <a href="javascript:;">
+                                    Disable Sounds
+                                    <div class="icon"><img src="./assets/images/icons/mute.svg" alt="Sound off" /></div>
+                                </a>
+                            </li>
+                            <li id="mute" class="hidemode" title="Mute" onclick="toggleSound('unmute')">
+                                <a href="javascript:;">
+                                    Enable Sounds
+                                    <div class="icon">
+                                        <img src="./assets/images/icons/volume.svg" alt="Sound On" />
+                                    </div>
+                                </a>
+                            </li>
+                            <li><a href="/payment.html">Payment</a></li>
+                            <li><a href="">Reports</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="./assets/js/index.js"></script>
+</html>
