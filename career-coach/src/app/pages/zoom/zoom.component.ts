@@ -17,7 +17,7 @@ public signature: any;
     this.SetCongf(8429284175);
   }
 
-  SetCongf(val : number) {
+  SetCongf(val) {
     this.meetConfig = {
       apiKey: '-MwJgHkHS7OORreRW8u5Xg',
       apiSecret: 'NlX2YRuA39XihmBoTuLugajqPmWMKmJQP7q4',

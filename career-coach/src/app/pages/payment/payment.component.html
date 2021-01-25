@@ -9,9 +9,10 @@
         We have recieved <b>AUD xxx.xx</b> amount from the <b>{{ clickedOption }}.</b>
     </p>
     <p>Detail of the session will be shortly sent to you on your email <b>niky@gmail.com</b>, please feel free to contact us if there is any issue or confusion</p>
-</div>
 
-<button  *ngIf="paymentClicked" mat-button color="primary" mat-raised-button (click)="continueToZoomMeeting()">Enter Meeting</button>
+    <button  *ngIf="paymentClicked" mat-button color="primary" mat-raised-button (click)="continueToZoomMeeting()">Enter Meeting</button>
+
+</div>
 
 <div class="payment-container" *ngIf="!paymentClicked">
     <div class="payment-options">
