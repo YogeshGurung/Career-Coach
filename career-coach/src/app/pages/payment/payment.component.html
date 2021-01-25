@@ -1,0 +1,44 @@
+<div class="page-row" *ngIf="!paymentClicked">
+    <h2>Unlock Debriefing Session</h2>
+    <p>Inorder to proceed to next stage which is online debriefing session with a professional consultant, you need to pay <b>AUD xxx.xx</b> amount</p>
+</div>
+
+<div class="page-row main-content" *ngIf="paymentClicked">
+    <h2>Congratulation, Debriefing has been unlocked</h2>
+    <p>
+        We have recieved <b>AUD xxx.xx</b> amount from the <b>{{ clickedOption }}.</b>
+    </p>
+    <p>Detail of the session will be shortly sent to you on your email <b>niky@gmail.com</b>, please feel free to contact us if there is any issue or confusion</p>
+</div>
+
+<button  *ngIf="paymentClicked" mat-button color="primary" mat-raised-button (click)="continueToZoomMeeting()">Enter Meeting</button>
+
+<div class="payment-container" *ngIf="!paymentClicked">
+    <div class="payment-options">
+        <h2>Payment Methods</h2>
+        <div class="payment-row" (click)="optionClicked('Visa Card')">
+            <img src="/assets/svg/visa.svg" alt="Visa" />
+            <div class="title">Pay with Visa Card</div>
+        </div>
+        <div class="payment-row" (click)="optionClicked('Master Card')">
+            <img src="/assets/svg/mastercard.svg" alt="master card" />
+            <div class="title">Pay with Master Card</div>
+        </div>
+        <div class="payment-row" (click)="optionClicked('Google Wallet')">
+            <img src="/assets/svg/google-wallet.svg" alt="Google Wallet" />
+            <div class="title">Pay with Google Wallet</div>
+        </div>
+        <div class="payment-row" (click)="optionClicked('Paypal')">
+            <img src="/assets/svg/paypal.svg" alt="Paypal" />
+            <div class="title">Pay with Paypal</div>
+        </div>
+        <div class="payment-row" (click)="optionClicked('Mobile Banking')">
+            <img src="/assets/svg/mobile-payment.svg" alt="mobile banking" />
+            <div class="title">Pay with Mobile Banking</div>
+        </div>
+        <div class="payment-row" (click)="optionClicked('Online Banking')">
+            <img src="/assets/svg/online-banking.svg" alt="Online Banking" />
+            <div class="title">Pay with Online Banking</div>
+        </div>
+    </div>
+</div>
