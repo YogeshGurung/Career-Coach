@@ -1,0 +1,17 @@
+<div class="page-row">
+    <h2>Congratulation !!</h2>
+    <p>You have completed the level 1 of the game, you can now continue for the debriefing session with the professional</p>
+    <button mat-button color="primary" mat-raised-button (click)="continueToDebriefing()">Continue for Debriefing Session</button>
+</div>
+<div class="result-container">
+    <div class="result-data-main" *ngFor="let result of totalDataKey">
+        <div class="career-card header-card">
+            <div class="title">{{ resultData[result]?.title }}</div>
+            <div class="value">{{ resultData[result]?.value.length }}</div>
+        </div>
+
+        <div class="result-data" *ngFor="let data of resultData[result]?.value">
+            <app-card [content]="data"></app-card>
+        </div>
+    </div>
+</div>
