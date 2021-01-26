@@ -7,9 +7,10 @@ import { CardDragComponent } from './card-drag/card-drag.component';
 import { PagesRoutingModule } from './pages.routing';
 import { PagesComponent } from './pages.component';
 import { AngularMaterialImportModule } from './../@core/import/angular-material.import';
+import { ZoomComponent } from './zoom/zoom.component';
 
 @NgModule({
     imports: [CommonModule, PagesRoutingModule, AngularMaterialImportModule],
-    declarations: [PagesComponent, CardDragComponent, ResultComponent, CardComponent, PaymentComponent]
+    declarations: [PagesComponent, CardDragComponent, ResultComponent, CardComponent, PaymentComponent, ZoomComponent]
 })
 export class PagesModule {}

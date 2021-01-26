@@ -5,8 +5,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
     {
-        path: '',
+        path: 'landing-component',
         component: LandingComponent
+    },
+    { 
+        path: '',
+        redirectTo: '/landing-component',
+        pathMatch: 'full' 
     },
     {
         path: 'u',

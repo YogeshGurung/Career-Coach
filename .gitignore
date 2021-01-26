@@ -12,3 +12,5 @@ project.hide
 jsconfig.json
 .atom-build.js
 build.hxml
+node_modules
+node_modules

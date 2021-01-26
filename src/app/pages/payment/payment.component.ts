@@ -1,5 +1,7 @@
 //import { Component, OnInit } from '@angular/core';
 import { Component, AfterViewChecked } from '@angular/core';
+import { Router } from '@angular/router';
+
 declare const paypal: any;
 
 @Component({
@@ -8,7 +10,7 @@ declare const paypal: any;
     styleUrls: ['./payment.component.scss']
 })
 export class PaymentComponent implements AfterViewChecked {
-    // paymentClicked = false;
+    paymentClicked = false;
     // clickedOption: string = '';
 
     // constructor() { }
@@ -19,6 +21,8 @@ export class PaymentComponent implements AfterViewChecked {
     //     this.clickedOption = paymentName;
     //     this.paymentClicked = true;
     // }
+
+    constructor(protected router: Router) {}
 
     addScript: boolean = false;
     finalAmount: number = 1;
@@ -41,8 +45,13 @@ export class PaymentComponent implements AfterViewChecked {
         },
         onAuthorize: (data, actions) => {
             return actions.payment.execute().then((payment) => { 
-
+                this.paymentClicked = true;
+                console.log("Paypal payment authorized");
             })
+        },
+        onCancel: () => {
+            this.paymentClicked = true;
+            console.log("Paypal cancelled");
         }
     };
     ngAfterViewChecked(): void {
@@ -62,6 +71,10 @@ export class PaymentComponent implements AfterViewChecked {
             document.body.appendChild(scripttagElement);
         })
 
+    }
+
+    continueToZoomMeeting() {
+        this.router.navigate(['/zoom']);
     }
 
 }

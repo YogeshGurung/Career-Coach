@@ -9,6 +9,7 @@
         We have recieved <b>AUD xxx.xx</b> amount from the <b>{{ clickedOption }}.</b>
     </p>
     <p>Detail of the session will be shortly sent to you on your email <b>niky@gmail.com</b>, please feel free to contact us if there is any issue or confusion</p>
+    <button  *ngIf="paymentClicked" mat-button color="primary" mat-raised-button (click)="continueToZoomMeeting()">Enter Meeting</button>
 </div>
 
 <div class="payment-container" *ngIf="!paymentClicked">
@@ -17,7 +18,7 @@
         <div class="payment-row" >
             <img src="/assets/svg/paypal.svg" alt="Paypal" />
             <input type="number" [(ngModel)]="finalAmount">
-            <div class="title" id="paypal-checkout-btn"></div>
+            <div class="title" id="paypal-checkout-btn" (click)="optionClicked('Paypal')"></div>
         </div>
         <div class="payment-row" (click)="optionClicked('Visa Card')">
             <img src="/assets/svg/visa.svg" alt="Visa" />
