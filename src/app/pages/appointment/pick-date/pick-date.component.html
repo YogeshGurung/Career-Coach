@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Choose your feasible date for appointment with {{ consultantName }}</h1>
+<div mat-dialog-content>
+    <mat-form-field>
+        <input matInput [ngxMatDatetimePicker]="picker" placeholder="Choose a date" [(ngModel)]="dateControl" [min]="minDate" (focus)="picker.open()" />
+        <ngx-mat-datetime-picker #picker [showSpinners]="showSpinners"> </ngx-mat-datetime-picker>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button color="primary" mat-raised-button [mat-dialog-close]="dateControl" cdkFocusInitial>Ok</button>
+</div>

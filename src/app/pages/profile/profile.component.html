@@ -1,0 +1,14 @@
+<mat-card>
+    <div class="image-holder" *ngIf="userData.photoURL">
+        <img src="{{ userData.photoURL }}" alt="{{ userData.displayName }}" />
+    </div>
+    <div class="image-holder" *ngIf="!userData.photoURL">
+        <b>{{ userData.displayName[0] }}</b>
+    </div>
+    <h1>
+        <strong>{{ userData.displayName ? userData.displayName : 'User' }}</strong>
+    </h1>
+    <p>
+        <strong>{{ userData.email }}</strong>
+    </p>
+</mat-card>

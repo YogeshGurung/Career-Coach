@@ -1,0 +1,42 @@
+<div class="landing-holder">
+    <mat-card *ngIf="!paymentHasAlreadyBeenDone">
+        <div class="page-title">
+            Welcome <span *ngIf="levelTwoCompleted || levelOneCompleted">back</span>
+            <b *ngIf="authService.isLoggedIn">
+                <small>{{ authService.getUserData?.displayName }} </small>
+            </b>
+            to <b>Career Coach </b>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="action-holder" *ngIf="authService.isLoggedIn && !loading && !levelTwoCompleted && !levelOneCompleted">
+            <button mat-raised-button color="primary" mat-button (click)="navigateTo('/u/game/level1')">Start the game</button>
+        </div>
+        <div class="action-holder" *ngIf="authService.isLoggedIn && !loading && !levelTwoCompleted && levelOneCompleted">
+            <button mat-raised-button color="primary" mat-button (click)="navigateTo('/u/game/level1')">Continue to the game</button>
+        </div>
+        <div class="action-holder" *ngIf="authService.isLoggedIn && !loading && levelTwoCompleted">
+            <button mat-raised-button color="primary" mat-button (click)="navigateTo('/u/result')">See the results</button>
+        </div>
+        <div class="action-holder" *ngIf="!authService.isLoggedIn">
+            <button mat-raised-button color="primary" mat-button (click)="authService.GoogleAuth()">Log in with Google</button>
+        </div>
+        <div class="action-holder" *ngIf="authService.isLoggedIn && loading">
+            <button mat-raised-button color="primary" mat-button><mat-spinner diameter="30" strokeWidth="4"></mat-spinner></button>
+        </div>
+    </mat-card>
+
+    <mat-card *ngIf="paymentHasAlreadyBeenDone">
+        <div class="page-title">
+            Welcome back<small>{{ authService.getUserData?.displayName }} </small> to <b>Career Coach </b>
+        </div>
+        <p>Seems like you are already waiting for your appointment, do you want to update the results?</p>
+        <mat-divider></mat-divider>
+        <div class="action-holder">
+            <button mat-raised-button color="primary" mat-button (click)="navigateTo('/u/game/level1')">Update the game</button>
+            <button mat-raised-button color="primary" mat-button (click)="navigateTo('/u/result')">See the results</button>
+        </div>
+        <div class="action-holder" *ngIf="loading">
+            <button mat-raised-button color="primary" mat-button><mat-spinner diameter="30" strokeWidth="4"></mat-spinner></button>
+        </div>
+    </mat-card>
+</div>

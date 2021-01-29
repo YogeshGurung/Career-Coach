@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+    <span class="logo" (click)="navigateTo('/')">Career Coach</span>
+    <span class="spacer"></span>
+    <button mat-button [matMenuTriggerFor]="menu" *ngIf="authService.isLoggedIn">{{ userData?.displayName ? userData?.displayName : 'User' }}</button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="navigateTo('/u/profile')">Profile</button>
+        <app-setting></app-setting>
+        <mat-divider></mat-divider>
+        <button mat-menu-item (click)="authService.SignOut()">Logout</button>
+    </mat-menu>
+</mat-toolbar>

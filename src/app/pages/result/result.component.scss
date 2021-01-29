@@ -1,0 +1,52 @@
+.result-container {
+    display: flex;
+    justify-content: center;
+
+    .mat-tab-group {
+        width: 100%;
+        margin-top: 40px;
+
+        ::ng-deep {
+            .mat-tab-body-content {
+                display: flex;
+                justify-content: center;
+            }
+
+            .mat-tab-labels {
+                border-bottom: 0;
+            }
+
+            .mat-ink-bar {
+                display: none;
+            }
+
+            .mat-tab-label {
+                background-color: rgba(255, 255, 255, 0.1);
+                border-radius: 30px;
+                margin-bottom: 10px;
+                border: 2px solid rgba(255, 255, 255, 0.1);
+
+                &.mat-tab-label-active {
+                    background-color: rgba(255, 255, 255, 0.6);
+                    border: 2px solid rgba(255, 255, 255, 0.8);
+                }
+
+                &:not(:last-child) {
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+
+    .header-card {
+        margin-bottom: 50px;
+    }
+
+    .result-data-main {
+        margin: 40px;
+    }
+
+    .loader-tab {
+        margin-top: 50px;
+    }
+}

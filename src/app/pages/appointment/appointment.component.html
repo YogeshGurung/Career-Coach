@@ -1,0 +1,35 @@
+<div class="page-row" *ngIf="!paymentHasbeenDone && !loading">
+    <h2>Let's find your consultant,</h2>
+    <p>Here is the list of few consultants, that we find for you as the best match</p>
+</div>
+<div class="appointment-container" *ngIf="!paymentHasbeenDone && !loading">
+    <mat-card *ngFor="let consultant of consultantsList">
+        <div class="image-holder">
+            <span class="material-icons">account_circle </span>
+        </div>
+        <div class="user-name">{{ consultant.name }}</div>
+        <div class="user-detail">{{ consultant.profession }}</div>
+        <div class="user-fee">{{ 'AUD ' + consultant.fee }}</div>
+        <button mat-button color="primary" mat-raised-button (click)="selectConsultant(consultant)">Select</button>
+    </mat-card>
+</div>
+
+<div class="page-row" *ngIf="paymentHasbeenDone && !loading">
+    <h2>{{ selectedConsultant.name }} is your consultant,</h2>
+    <p>Your next appointment is {{ appointmentDate }}</p>
+</div>
+<div class="appointment-container" *ngIf="paymentHasbeenDone && !loading">
+    <mat-card>
+        <div class="image-holder">
+            <span class="material-icons">account_circle </span>
+        </div>
+        <div class="user-name">{{ selectedConsultant.name }}</div>
+        <div class="user-detail">{{ selectedConsultant.profession }}</div>
+        <div class="user-fee">{{ 'AUD ' + selectedConsultant.fee }}</div>
+        <!-- <button mat-button color="primary" mat-raised-button (click)="see(selectedConsultant)">Select</button> -->
+    </mat-card>
+</div>
+
+<div *ngIf="loading" class="loader-part">
+    <mat-spinner color="accent"></mat-spinner>
+</div>

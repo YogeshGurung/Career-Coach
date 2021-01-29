@@ -1,0 +1,11 @@
+.main-body {
+    width: calc(100% - 40px);
+    margin: 20px;
+}
+
+::ng-deep {
+    .loader-part {
+        display: flex;
+        justify-content: center;
+    }
+}
